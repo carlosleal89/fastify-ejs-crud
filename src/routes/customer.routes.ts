@@ -9,7 +9,7 @@ async function customerRoutes(fastify: FastifyInstance) {
   fastify.get('/', async (request, reply) => {
     try {
       const data = await controller.getCustomers();
-      return reply.view('src/views/home.ejs', {
+      return reply.view('src/views/index.ejs', {
         customers: data
       });
     } catch (error: any) {

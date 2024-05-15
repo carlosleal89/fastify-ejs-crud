@@ -1,0 +1,11 @@
+<ul>
+  <% customers.forEach(customer => { %>
+      <li>
+        Name: <%= customer.name %>,
+        email: <%= customer.email %>,
+        cpf: <%= customer.cpf %>,
+        phone: <%= customer.phone %>,
+        status: <%= customer.status %>,
+      </li>
+      <% }); %>
+</ul>

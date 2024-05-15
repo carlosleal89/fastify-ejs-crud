@@ -4,6 +4,14 @@ import fastifyPostgres from '@fastify/postgres';
 import customerRoutes from './routes/customer.routes';
 import fastifyView from '@fastify/view';
 import ejs from 'ejs';
+import fastifyStatic from '@fastify/static';
+import path from 'path';
+
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const fastify = Fastify({
   logger: {
@@ -17,17 +25,23 @@ fastify.register(fastifyPostgres, {
   connectionString: 'postgres://postgres:123456@localhost/customersmanagement'
 });
 
+fastify.register(fastifyView, {
+  engine: {
+      ejs: ejs,
+  },
+});
+
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, 'public'),
+  prefix: '/public/',
+});
+
 fastify.register(favicon); // plugin para o erro da requisição ao favicon
 
 fastify.register(customerRoutes, {
   prefix: '/customers'
 });
 
-fastify.register(fastifyView, {
-  engine: {
-      ejs: ejs,
-  },
-});
 
 fastify.listen({ port: 5000, host: '0.0.0.0' }, function (err, address) {
   if (err) {
