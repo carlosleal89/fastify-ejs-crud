@@ -1,17 +1,21 @@
-<div>
+<div class="container-customers-list">
   <% customers.forEach(customer => { %>
-      <div class="customers-list-container">
+      <div class="container-customer">
         <div>
-          <p>Name: <%= customer.name %></p>
-          <p>email: <%= customer.email %></p>
+          <p><%= customer.name %></p>
+          <p><%= customer.email %></p>
         </div>
         <div>
-          <p>cpf: <%= customer.cpf %></p>
-          <p>phone: <%= customer.phone %></p>
+          <p>Cpf: <%= customer.cpf %></p>
+          <p>Telefone: <%= customer.phone %></p>
         </div>
         <div>
-          <p>status: <%= customer.status %></p>
+          <p><%= customer.status %></p>
         </div>
+        <button
+          class="button-edit">
+            Editar
+        </button>
       </div>
       <% }); %>
 </div>

@@ -1,4 +1,11 @@
-.customers-list-container {
+.container-customers-list {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+
+.container-customer {
   display: flex;
   padding: 5px;
   gap: 5px;
