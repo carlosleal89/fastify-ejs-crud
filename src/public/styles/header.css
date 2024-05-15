@@ -1,0 +1,9 @@
+.header_container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(41, 41, 41) ;
+}
+
+#header-logo {
+  width: 100px;
+}
