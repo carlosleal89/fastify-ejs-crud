@@ -9,7 +9,7 @@ async function customerRoutes(fastify: FastifyInstance) {
   fastify.get('/', async (request, reply) => {
     try {
       const data = await controller.getCustomers();
-      reply.send(data);
+      reply.status(200).send(data);
     } catch (error: any) {
       console.error('ROUTE', error.message);
     }

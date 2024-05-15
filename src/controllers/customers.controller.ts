@@ -9,12 +9,13 @@ export default class CustomerController {
     this.customerModel = new CustomerModel(postgres);
   }
 
-  async getCustomers(): Promise<ICustomer | null | any> {
+  async getCustomers(): Promise<ICustomer[] | null> {
     try {
       const customerList = await this.customerModel.getCustomers();
       return customerList;
     } catch (error: any) {
-      console.error('CONTROLLER', error.message)
+      console.error('CONTROLLER', error.message);
+      throw new error('INTERNAL SERVER ERROR: ', error.message);
     }
   }
 }
