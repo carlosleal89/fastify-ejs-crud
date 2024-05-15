@@ -1,20 +1,28 @@
 {
   "name": "fastify-ts-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/pg": "^8.11.6",
+    "@wwa/fastify-favicon": "^2.2.4",
     "nodemon": "^3.1.0",
     "tsx": "^4.10.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "fastify": "^4.27.0"
+    "@fastify/postgres": "^5.2.2",
+    "fastify": "^4.27.0",
+    "pg": "^8.11.5",
+    "pino-prettier": "^2.0.3"
   }
 }
