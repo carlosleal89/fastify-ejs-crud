@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    container_name: customer-management-db
+    environment:
+      - POSTGRES_PASSWORD=123456
+    volumes: 
+    - ./src/database/01-customers.sql:/docker-entrypoint-initdb.d/01-customers.sql
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
