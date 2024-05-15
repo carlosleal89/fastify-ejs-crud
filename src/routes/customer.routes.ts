@@ -9,19 +9,18 @@ async function customerRoutes(fastify: FastifyInstance) {
   fastify.get('/', async (request, reply) => {
     try {
       const data = await controller.getCustomers();
-      return reply.view('src/views/index.ejs', {
+      return reply.view('index.ejs', {
         customers: data
-      });
+      }
+    );
     } catch (error: any) {
       console.error('ROUTE', error.message);
     }
   });
 
-  fastify.get('/tst', async (request, reply) => {
+  fastify.get('/edit', async (request, reply) => {
     try {
-      return reply.view('src/views/home.ejs', {
-        title: 'Homepage'
-      });
+      return reply.view('customers/editForm.ejs', {}, { layout: 'layout'});
     } catch (error: any) {
       console.error('ROUTE', error.message);
     }

@@ -29,6 +29,8 @@ fastify.register(fastifyView, {
   engine: {
       ejs: ejs,
   },
+  root: path.join(__dirname, 'views'), // configura o diretorio padrão dos templates, o que evita ter que especificar o caminho completo na rota.
+  viewExt: 'ejs'
 });
 
 fastify.register(fastifyStatic, {
@@ -41,7 +43,6 @@ fastify.register(favicon); // plugin para o erro da requisição ao favicon
 fastify.register(customerRoutes, {
   prefix: '/customers'
 });
-
 
 fastify.listen({ port: 5000, host: '0.0.0.0' }, function (err, address) {
   if (err) {
