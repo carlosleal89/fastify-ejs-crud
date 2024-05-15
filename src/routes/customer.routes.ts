@@ -9,11 +9,23 @@ async function customerRoutes(fastify: FastifyInstance) {
   fastify.get('/', async (request, reply) => {
     try {
       const data = await controller.getCustomers();
-      reply.status(200).send(data);
+      return reply.view('src/views/home.ejs', {
+        customers: data
+      });
     } catch (error: any) {
       console.error('ROUTE', error.message);
     }
   });
+
+  fastify.get('/tst', async (request, reply) => {
+    try {
+      return reply.view('src/views/home.ejs', {
+        title: 'Homepage'
+      });
+    } catch (error: any) {
+      console.error('ROUTE', error.message);
+    }
+  })
 }
 
 export default customerRoutes;

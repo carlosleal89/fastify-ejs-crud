@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/node": "^20.12.12",
     "@types/pg": "^8.11.6",
     "@wwa/fastify-favicon": "^2.2.4",
@@ -21,8 +22,10 @@
   },
   "dependencies": {
     "@fastify/postgres": "^5.2.2",
+    "@fastify/view": "^9.1.0",
+    "ejs": "^3.1.10",
     "fastify": "^4.27.0",
     "pg": "^8.11.5",
-    "pino-prettier": "^2.0.3"
+    "pino-pretty": "^11.0.0"
   }
 }
