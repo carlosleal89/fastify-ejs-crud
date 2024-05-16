@@ -1,12 +1,22 @@
-<div class="container-form">
-  <input type="text" name="input-name" id="input-name" placeholder="Nome" >
-  <input type="email" name="input-name" id="input-email" placeholder="Email" >
-  <input type="text" name="input-name" id="input-cpf" placeholder="CPF" >
-  <input type="text" name="input-name" id="input-phone" placeholder="Telefone" >
+<form class="container-form">  
+  <input type="text" name="input-name" id="input-name" placeholder="Nome" value="<%= customer[0].name %>" >
+  <input type="email" name="input-name" id="input-email" placeholder="Email" value="<%= customer[0].email %>" >
+  <input type="text" name="input-name" id="input-cpf" placeholder="CPF" value="<%= customer[0].cpf %>" >
+  <input type="text" name="input-name" id="input-phone" placeholder="Telefone" value="<%= customer[0].phone %>" >
   <select name="status-select" id="status-select">
-    <option>Ativo</option>
-    <option>Inativo</option>
-    <option>Aguardando Ativação</option>
-    <option>Desativado</option>
+    <option value="Ativo" <%= customer[0].status === 'Ativo' ? 'selected' : '' %>>Ativo</option>
+    <option value="Inativo" <%= customer[0].status === 'Inativo' ? 'selected' : '' %>>Inativo</option>
+    <option value="Aguardando Ativação" <%= customer[0].status === 'Aguardando Ativação' ? 'selected' : '' %>>Aguardando Ativação</option>
+    <option value="Desativado" <%= customer[0].status === 'Desativado' ? 'selected' : '' %>>Desativado</option>
   </select>
-</div>
+  <div class="container-btn-form">
+    <button type="submit">Salvar</button>
+    <button type="button" id="btn-back">Voltar</button>
+  </div>
+</form>
+
+<script>
+  document.getElementById('btn-back').addEventListener('click', function() {
+    window.location.href = '/customers/';
+  });
+</script>

@@ -18,9 +18,17 @@ async function customerRoutes(fastify: FastifyInstance) {
     }
   });
 
-  fastify.get('/edit', async (request, reply) => {
+  fastify.get<{ Params: { id: string } }>('/edit/:id', async (request, reply) => {
+    // tipagem do get necessaria para o TS entender o tipo que esta sendo recebido em Params
     try {
-      return reply.view('customers/editForm.ejs', {}, { layout: 'layout'});
+      const { id } =  request.params;
+      
+      const data = await controller.getCustomerById(Number(id));
+
+      console.log(data);
+      
+      
+      return reply.view('customers/editForm.ejs', { customer: data }, { layout: 'layout'});
     } catch (error: any) {
       console.error('ROUTE', error.message);
     }

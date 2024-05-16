@@ -6,12 +6,11 @@ import fastifyView from '@fastify/view';
 import ejs from 'ejs';
 import fastifyStatic from '@fastify/static';
 import path from 'path';
-
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = dirname(__filename); //configuração necessaria, pois o __dirname não é disponivel quando se usa ES module
 
 const fastify = Fastify({
   logger: {

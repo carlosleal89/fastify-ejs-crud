@@ -8,5 +8,6 @@ export interface ICustomer {
 }
 
 export interface ICustomerModel {
-  getCustomers(): Promise<ICustomer[] | null>
+  getCustomers(): Promise<ICustomer[] | null>;
+  getCustomerById(customerId: number): Promise<ICustomer[] | null>;
 }
