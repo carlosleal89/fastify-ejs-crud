@@ -11,7 +11,7 @@ export default class CustomerModel implements ICustomerModel {
 
   public async getCustomers(): Promise<ICustomer[] | null> {
     try {
-      const { rows } = await this.postgres.query('SELECT * FROM customers');
+      const { rows } = await this.postgres.query('SELECT * FROM customers ORDER BY name ASC');
       return rows;
     } catch (err: any) {
       console.error('MODEL: ', err.message);

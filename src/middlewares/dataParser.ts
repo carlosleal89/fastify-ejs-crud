@@ -1,14 +1,12 @@
 import fastifyPlugin from 'fastify-plugin';
-import qs from 'qs';
+import qs, { ParsedQs} from 'qs';
 
 async function urlEncondedParser (fastify: any, options: any) {
   fastify.addContentTypeParser('application/x-www-form-urlencoded', { parseAs: 'string' }, (req: any, body: any, done: any) => {
     try {
-      const parsed = qs.parse(body);
-
-      const inputs: any = parsed['input-name'];
+      const parsed: Record<string, string | string[] | ParsedQs | ParsedQs[] | undefined> = qs.parse(body);
       
-      const [name, email, cpf, phone] = inputs;
+      const [name, email, cpf, phone]: string[] = parsed['input-name'] as string[];
 
       const consumer = {
         name,
