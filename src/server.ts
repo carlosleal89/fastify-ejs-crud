@@ -40,7 +40,7 @@ fastify.register(fastifyStatic, {
 
 fastify.register(favicon); // plugin para o erro da requisição ao favicon
 
-fastify.register(urlEncondedParser);
+fastify.register(urlEncondedParser); // plugin criado para o Fastify lidar com o tipo de dados 'application/x-www-form-urlencoded'. Formato enviado por requisições do tipo POST
 
 fastify.register(customerRoutes, {
   prefix: '/customers'
