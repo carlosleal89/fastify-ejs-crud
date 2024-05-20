@@ -1,6 +1,7 @@
 import { FastifyInstance } from 'fastify';
 import CustomerController from '../controllers/customers.controller';
 import { PostgresDb } from '@fastify/postgres';
+import { ICustomer } from '../interfaces/customer.interface';
 
 async function customerRoutes(fastify: FastifyInstance) {
   const postgres: PostgresDb = fastify.pg;
@@ -13,8 +14,9 @@ async function customerRoutes(fastify: FastifyInstance) {
         customers: data
       }
     );
-    } catch (error: any) {
-      console.error('ROUTE', error.message);
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      // refatorar tratativa de erros
     }
   });
 
@@ -24,13 +26,26 @@ async function customerRoutes(fastify: FastifyInstance) {
       const { id } =  request.params;
       
       const data = await controller.getCustomerById(Number(id));
-
-      console.log(data);
-      
+      // tratar o caso de não existir o id no banco. Mostrar um mensagem no template caso não exista.  
       
       return reply.view('customers/editForm.ejs', { customer: data }, { layout: 'layout'});
-    } catch (error: any) {
-      console.error('ROUTE', error.message);
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      // refatorar tratativa de erros
+    }
+  });
+
+  fastify.post<{ Params: { id: string }, Body: ICustomer }>('/update/:id', async (request, reply) => {
+    try {
+      const { id } =  request.params;
+      const data = request.body;
+
+      await controller.updateCustomer(Number(id), data)
+
+      return reply.redirect('/');
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      // refatorar tratativa de erros
     }
   })
 }

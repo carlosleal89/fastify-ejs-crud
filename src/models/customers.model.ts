@@ -16,6 +16,7 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+      // refatorar tratativa de erros
     }
   }
 
@@ -29,6 +30,24 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+      // refatorar tratativa de erros
+    }
+  }
+
+  public async updateCustomer(customerId: Number, customerData: ICustomer): Promise<void> {
+    try {
+      const { name, email, cpf, phone, status } = customerData;
+      const tst = await this.postgres.query(
+        'UPDATE customers SET name = $1, email = $2, cpf = $3, phone = $4, status = $5 WHERE id = $6',
+        [ name, email, cpf, phone, status, customerId ]
+      );
+
+      console.log('TESTE', tst);
+      
+    } catch (err: any) {
+      console.error('MODEL: ', err.message);
+      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+      // refatorar tratativa de erros
     }
   }
 }
