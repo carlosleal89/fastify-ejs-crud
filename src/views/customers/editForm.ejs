@@ -1,8 +1,13 @@
-<form class="container-form" action="/customers/update/<%= customer[0].id %>" method="POST">  
+<form class="container-form" action="/customers/update/<%= customer[0].id %>" method="POST">
+  <label for="input-name">Nome: </label>  
   <input type="text" name="input-name" id="input-name" placeholder="Nome" value="<%= customer[0].name %>" >
+  <label for="input-email">Email: </label> 
   <input type="email" name="input-name" id="input-email" placeholder="Email" value="<%= customer[0].email %>" >
+  <label for="input-cpf">CPF: </label> 
   <input type="text" name="input-name" id="input-cpf" placeholder="CPF" value="<%= customer[0].cpf %>" >
+  <label for="input-phone">Telefone: </label> 
   <input type="text" name="input-name" id="input-phone" placeholder="Telefone" value="<%= customer[0].phone %>" >
+  <label for="status-select">Status: </label> 
   <select name="status-select" id="status-select">
     <option value="Ativo" <%= customer[0].status === 'Ativo' ? 'selected' : '' %>>Ativo</option>
     <option value="Inativo" <%= customer[0].status === 'Inativo' ? 'selected' : '' %>>Inativo</option>
@@ -10,7 +15,7 @@
     <option value="Desativado" <%= customer[0].status === 'Desativado' ? 'selected' : '' %>>Desativado</option>
   </select>
   <div class="container-btn-form">
-    <button type="submit">Salvar</button>
+    <button type="submit">Editar</button>
     <button type="button" id="btn-back">Voltar</button>
   </div>
 </form>

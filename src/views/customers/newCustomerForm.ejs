@@ -1,0 +1,22 @@
+<form class="container-form" action="/customers/new-customer/>" method="POST">  
+  <input type="text" name="input-name" id="input-name" placeholder="Nome" value="<%= customer[0].name %>" >
+  <input type="email" name="input-name" id="input-email" placeholder="Email" value="" >
+  <input type="text" name="input-name" id="input-cpf" placeholder="CPF" value="" >
+  <input type="text" name="input-name" id="input-phone" placeholder="Telefone" value="" >
+  <select name="status-select" id="status-select">
+    <option value="Ativo">Ativo</option>
+    <option value="Inativo">Inativo</option>
+    <option value="Aguardando Ativação">Aguardando Ativação</option>
+    <option value="Desativado">Desativado</option>
+  </select>
+  <div class="container-btn-form">
+    <button type="submit">Criar</button>
+    <button type="button" id="btn-back">Voltar</button>
+  </div>
+</form>
+
+<script>
+  document.getElementById('btn-back').addEventListener('click', function() {
+    window.location.href = '/customers/';
+  });
+</script>

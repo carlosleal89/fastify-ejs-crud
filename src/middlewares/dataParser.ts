@@ -9,7 +9,7 @@ async function urlEncondedParser (fastify: FastifyInstance, options: any) {
       const parsed: Record<string, string | string[] | ParsedQs | ParsedQs[] | undefined> = qs.parse(body);
       
       const [name, email, cpf, phone]: string[] = parsed['input-name'] as string[];
-      const [status]: string = parsed['status-select'] as string;
+      const status: string = parsed['status-select'] as string;      
 
       const consumer: ICustomer = {
         name,
