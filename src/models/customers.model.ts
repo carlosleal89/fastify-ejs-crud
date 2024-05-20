@@ -41,8 +41,6 @@ export default class CustomerModel implements ICustomerModel {
         'UPDATE customers SET name = $1, email = $2, cpf = $3, phone = $4, status = $5 WHERE id = $6',
         [ name, email, cpf, phone, status, customerId ]
       );
-
-      console.log('TESTE', tst);
       
     } catch (err: any) {
       console.error('MODEL: ', err.message);

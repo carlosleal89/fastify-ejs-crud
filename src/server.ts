@@ -8,6 +8,7 @@ import fastifyStatic from '@fastify/static';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import urlEncondedParser from './middlewares/dataParser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); //configuração necessaria, pois o __dirname não é disponivel quando se usa ES module
@@ -38,6 +39,8 @@ fastify.register(fastifyStatic, {
 });
 
 fastify.register(favicon); // plugin para o erro da requisição ao favicon
+
+fastify.register(urlEncondedParser);
 
 fastify.register(customerRoutes, {
   prefix: '/customers'

@@ -33,6 +33,7 @@ export default class CustomerController {
 
   public async updateCustomer(customerId: number, customerData: ICustomer): Promise<void> {
     try {
+      const data = customerData;
       await this.customerModel.updateCustomer(customerId, customerData);
     } catch (err: any) {
       console.error('CONTROLLER', err.message);

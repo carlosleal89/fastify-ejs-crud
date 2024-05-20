@@ -26,6 +26,7 @@ async function customerRoutes(fastify: FastifyInstance) {
       const { id } =  request.params;
       
       const data = await controller.getCustomerById(Number(id));
+      
       // tratar o caso de não existir o id no banco. Mostrar um mensagem no template caso não exista.  
       
       return reply.view('customers/editForm.ejs', { customer: data }, { layout: 'layout'});
@@ -38,14 +39,15 @@ async function customerRoutes(fastify: FastifyInstance) {
   fastify.post<{ Params: { id: string }, Body: ICustomer }>('/update/:id', async (request, reply) => {
     try {
       const { id } =  request.params;
-      const data = request.body;
+      
+      const data = request.body;    
 
       await controller.updateCustomer(Number(id), data)
 
-      return reply.redirect('/');
+      return reply.redirect('/customers/');
     } catch (err: any) {
       console.error('ROUTE', err.message);
-      // refatorar tratativa de erros
+      return reply.redirect('/customers/');
     }
   })
 }
