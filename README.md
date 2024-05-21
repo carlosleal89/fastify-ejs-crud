@@ -10,15 +10,15 @@ Algumas funcionalidades ainda serão implementadas, como tela de login de usuár
 
 - Visualizar a lista de clientes cadastrados:
 
-<img src="">
+<img src="./src/public/images/home.png">
 
 - Cadastrar um novo cliente:
 
-<img src="">
+<img src="./src/public/images/editCustomer.png">
 
 - Editar um cliente já existente:
 
-<img src="">
+<img src="./src/public/images/newCustomer.png">
 
 ## Dependencias:
 
