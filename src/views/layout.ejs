@@ -19,9 +19,9 @@
         <%- include('header'); %>
     </header>
 
-    <main>
-        <!-- Conteúdo da página -->
-        <button type="button" id="btn-new-customer">Novo Cliente</button>
+    <main class="container-main">
+        <!-- Conteúdo da página --> 
+        <h1>Painel de Clientes</h1>       
         <%- body %>
     </main>
 
@@ -30,9 +30,4 @@
         <%- include('footer'); %>
     </footer>
 </body>
-<script>
-    document.getElementById('btn-new-customer').addEventListener('click', function() {
-      window.location.href = '/customers/new-customer';
-    });
-  </script>
 </html>

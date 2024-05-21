@@ -1,1 +1,14 @@
+<div class="container-nav-home">
+  <div class="container-user-list-title">
+    <h3>Listagem de Clientes</h3>
+    <h4>Escolha um cliente para visualizar os detalhes</h4>
+  </div>  
+  <button type="button" id="btn-new-customer">Novo Cliente</button>
+</div>
+
 <%- include('customers/customersList.ejs'); %>
+<script>
+  document.getElementById('btn-new-customer').addEventListener('click', function() {
+    window.location.href = '/customers/new-customer';
+  });
+</script>

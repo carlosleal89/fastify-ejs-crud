@@ -2,3 +2,31 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.container-main {
+  margin: 1rem;
+}
+
+.container-nav-home {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.50rem;
+}
+
+.container-user-list-title h4 {
+  color: rgb(99, 99, 99);
+}
+
+#btn-new-customer {
+  height: 2.5rem;
+  color: white;
+  margin: auto 0;
+  background-color: green;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btn-new-customer:hover {
+  background-color: rgb(73, 206, 73);
+}
