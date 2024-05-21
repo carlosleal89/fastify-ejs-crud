@@ -7,11 +7,27 @@
 
 .container-customer {
   display: flex;
-  padding: 5px;
+  align-items: center;
+  padding: 0.75rem;
   gap: 5px;
   justify-content: space-between;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid rgb(99, 99, 99);;
+  border-radius: 0.25rem;
+  margin: 0.75rem 0;
+}
+
+.container-name-email {
+  width: 16.66%;
+}
+
+.container-cpf-phone {
+  width: 10rem;
+  margin-left: auto;
+}
+
+.container-status {
+  width: 10rem;
+  margin-left: auto;
 }
 
 .btn-edit-customer {
@@ -23,6 +39,7 @@
   border-radius: 0.25rem;
   height: 2.25rem;
   margin: auto 0;
+  width: 5rem;
 }
 
 .btn-edit-customer:hover {

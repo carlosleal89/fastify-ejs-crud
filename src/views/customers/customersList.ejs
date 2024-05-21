@@ -1,15 +1,15 @@
 <div class="container-customers-list">
   <% customers.forEach(customer => { %>
       <div class="container-customer">
-        <div>
+        <div class="container-name-email">
           <p><%= customer.name %></p>
           <p><%= customer.email %></p>
         </div>
-        <div>
+        <div class="container-cpf-phone">
           <p>Cpf: <%= customer.cpf %></p>
           <p>Telefone: <%= customer.phone %></p>
         </div>
-        <div>
+        <div class="container-status">
           <p><%= customer.status %></p>
         </div>
           <a href="/customers/edit/<%= customer.id %>" class="button-edit">
