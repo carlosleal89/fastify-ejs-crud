@@ -66,10 +66,11 @@ async function customerRoutes(fastify: FastifyInstance) {
 
       await controller.createCustomer(data);
 
-      return reply.redirect('/customers/');
+      // return reply.redirect('/customers/');
+      return reply.view('alerts/createdCustomer.ejs', { criado: true });
     } catch (err: any) {
-      console.error('ROUTE', err.message);
-      return reply.redirect('/customers/');
+      console.error('ROUTE', err.message);      
+      return reply.view('alerts/errorAlert.ejs', { errorMessage: err.message });
     }
   });
 }
