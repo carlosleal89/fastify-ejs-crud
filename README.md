@@ -14,11 +14,11 @@ Algumas funcionalidades ainda serão implementadas, como tela de login de usuár
 
 - Cadastrar um novo cliente:
 
-<img src="./src/public/images/editCustomer.png">
+<img src="./src/public/images/newCustomer.png">
 
 - Editar um cliente já existente:
 
-<img src="./src/public/images/newCustomer.png">
+<img src="./src/public/images/editCustomer.png">
 
 ## Dependencias:
 
