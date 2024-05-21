@@ -3,7 +3,7 @@
 ## Descrição:
 
 Esta é uma aplicação SSR desenvolvida em ambiente Node com Fastify e renderização de templates EJS. Foi criada para permitir aos usuários visualizar uma lista de clientes, assim como criar ou editar um registro de cliente.
-Algumas funcionalidades ainda serão implementadas, como tela de login de usuários e gerenciamento de permissões.
+Algumas funcionalidades ainda serão implementadas, como tela de login de usuários, gerenciamento de permissões, validação dos campos de input e melhor formatação das mensagens de erro.
 
 
 ## Funcionalidades principais:
