@@ -44,10 +44,10 @@ async function customerRoutes(fastify: FastifyInstance) {
 
       await controller.updateCustomer(Number(id), data)
 
-      return reply.redirect('/customers/');
+      return reply.view('alerts/sucessAlert.ejs', { criado: true, alertText: 'atualizado' });
     } catch (err: any) {
       console.error('ROUTE', err.message);
-      return reply.redirect('/customers/');
+      return reply.view('alerts/errorAlert.ejs', { errorMessage: err.message });
     }
   });
 
@@ -66,8 +66,7 @@ async function customerRoutes(fastify: FastifyInstance) {
 
       await controller.createCustomer(data);
 
-      // return reply.redirect('/customers/');
-      return reply.view('alerts/createdCustomerAlert.ejs', { criado: true });
+      return reply.view('alerts/sucessAlert.ejs', { criado: true, alertText: 'criado' });
     } catch (err: any) {
       console.error('ROUTE', err.message);      
       return reply.view('alerts/errorAlert.ejs', { errorMessage: err.message });
