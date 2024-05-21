@@ -1,0 +1,39 @@
+.btn-transparent {
+  background-color: transparent;
+  cursor: pointer;
+  color: green;
+  font-weight: 600;
+  border-color: green;
+  border-radius: 0.25rem;
+  height: 2.25rem;
+  margin: auto 0;
+  width: 5rem;
+}
+
+.btn-transparent:hover {
+  background-color: green;
+  color: white;
+}
+
+.container-btn-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem auto 1rem 1.5rem;
+  width: 50%;
+}
+
+.container-form input {
+  height: 2rem;
+  padding: 5px;
+}
+
+#status-select {
+  height: 2rem;
+}
