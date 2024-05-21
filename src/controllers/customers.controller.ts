@@ -13,10 +13,9 @@ export default class CustomerController {
     try {
       const customerList = await this.customerModel.getCustomers();
       return customerList;
-    } catch (error: any) {
-      console.error('CONTROLLER', error.message);
-      throw new error('INTERNAL SERVER ERROR: ', error.message);
-      // refatorar tratativa de erros
+    } catch (err: any) {
+      console.error('CONTROLLER', err.message);
+      throw new Error(err.message);
     }
   }
 
@@ -26,8 +25,7 @@ export default class CustomerController {
       return isCustomer;
     } catch (err: any) {
       console.error('CONTROLLER', err.message);
-      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
+      throw new Error(err.message);
     }
   }
 
@@ -37,8 +35,7 @@ export default class CustomerController {
       await this.customerModel.updateCustomer(customerId, customerData);
     } catch (err: any) {
       console.error('CONTROLLER', err.message);
-      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
+      throw Error(err.message);
     }
   }
 
@@ -48,8 +45,7 @@ export default class CustomerController {
       await this.customerModel.createCustomer(customerData);
     } catch (err: any) {
       console.error('CONTROLLER', err.message);
-      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
+      throw new Error(err.message);
     }
   }
 }

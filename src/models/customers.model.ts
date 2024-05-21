@@ -16,7 +16,6 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
     }
   }
 
@@ -30,7 +29,6 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
     }
   }
 
@@ -45,7 +43,6 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
     }
   }
 
@@ -60,7 +57,6 @@ export default class CustomerModel implements ICustomerModel {
     } catch (err: any) {
       console.error('MODEL: ', err.message);
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
-      // refatorar tratativa de erros
     }
   }
 }

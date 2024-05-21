@@ -16,7 +16,7 @@ async function customerRoutes(fastify: FastifyInstance) {
     );
     } catch (err: any) {
       console.error('ROUTE', err.message);
-      // refatorar tratativa de erros
+      return reply.status(500).send({ error: err.message });
     }
   });
 
@@ -27,12 +27,10 @@ async function customerRoutes(fastify: FastifyInstance) {
       
       const data = await controller.getCustomerById(Number(id));
       
-      // tratar o caso de não existir o id no banco. Mostrar um mensagem no template caso não exista.  
-      
       return reply.view('customers/editForm.ejs', { customer: data }, { layout: 'layout'});
     } catch (err: any) {
       console.error('ROUTE', err.message);
-      // refatorar tratativa de erros
+      return reply.status(500).send({ error: err.message });
     }
   });
 
