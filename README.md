@@ -33,16 +33,16 @@ Algumas funcionalidades ainda serão implementadas, como tela de login de usuár
 
   1. Instale as dependencias:
 
-        npm install
+         npm install
 
   2. Executar o container com o banco de dados:
 
-        docker-compose up --build
+         docker-compose up --build
 
   3. Execute o servidor:
 
-        npm run dev
+         npm run dev
 
   4. Acesse o aplicativo:
 
-        http://localhost:5000/customers/
+         http://localhost:5000/customers/
