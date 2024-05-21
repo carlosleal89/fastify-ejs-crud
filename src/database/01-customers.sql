@@ -13,14 +13,14 @@ CREATE TABLE "customers" (
 );
 
 
-INSERT INTO "customers" ("id", "name", "email", "cpf", "phone", "status")
-VALUES (1, 'Alan Wake', 'alan@wake.com', '12345678910', '4899999999', 'Ativo');
+INSERT INTO "customers" ("name", "email", "cpf", "phone", "status")
+VALUES ('Alan Wake', 'alan@wake.com', '12345678910', '4899999999', 'Ativo');
 
-INSERT INTO "customers" ("id", "name", "email", "cpf", "phone", "status")
-VALUES (2, 'Jesse Faden', 'jesse@faden.com', '12345678920', '4899998888', 'Inativo');
+INSERT INTO "customers" ("name", "email", "cpf", "phone", "status")
+VALUES ('Jesse Faden', 'jesse@faden.com', '12345678920', '4899998888', 'Inativo');
 
-INSERT INTO "customers" ("id", "name", "email", "cpf", "phone", "status")
-VALUES (3, 'Sole Survivor', 'sole@survivor.com', '12345678930', '4899997777', 'Aguardando Ativação');
+INSERT INTO "customers" ("name", "email", "cpf", "phone", "status")
+VALUES ('Sole Survivor', 'sole@survivor.com', '12345678930', '4899997777', 'Aguardando Ativação');
 
-INSERT INTO "customers" ("id", "name", "email", "cpf", "phone", "status")
-VALUES (4, 'Arthur Morgan', 'arthur@morgan.com', '12345678940', '4899996666', 'Desativado');
+INSERT INTO "customers" ("name", "email", "cpf", "phone", "status")
+VALUES ('Arthur Morgan', 'arthur@morgan.com', '12345678940', '4899996666', 'Desativado');

@@ -49,7 +49,29 @@ async function customerRoutes(fastify: FastifyInstance) {
       console.error('ROUTE', err.message);
       return reply.redirect('/customers/');
     }
-  })
+  });
+
+  fastify.get('/new-customer', async (request, reply) => {
+    try {
+      return reply.view('customers/newCustomerForm.ejs', {}, { layout: 'layout'});
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      return reply.redirect('/customers/');
+    }
+  });
+
+  fastify.post<{ Body: ICustomer }>('/new-customer', async (request, reply) => {
+    try {
+      const data = request.body;    
+
+      await controller.createCustomer(data);
+
+      return reply.redirect('/customers/');
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      return reply.redirect('/customers/');
+    }
+  });
 }
 
 export default customerRoutes;

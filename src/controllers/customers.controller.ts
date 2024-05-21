@@ -41,4 +41,15 @@ export default class CustomerController {
       // refatorar tratativa de erros
     }
   }
+
+  public async createCustomer(customerData: ICustomer): Promise<void> {
+    try {
+      const data = customerData;
+      await this.customerModel.createCustomer(customerData);
+    } catch (err: any) {
+      console.error('CONTROLLER', err.message);
+      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+      // refatorar tratativa de erros
+    }
+  }
 }

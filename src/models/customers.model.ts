@@ -48,4 +48,19 @@ export default class CustomerModel implements ICustomerModel {
       // refatorar tratativa de erros
     }
   }
+
+  public async createCustomer(customerData: ICustomer): Promise<void> {
+    try {
+      const { name, email, cpf, phone, status } = customerData;
+      const tst = await this.postgres.query(
+        'INSERT INTO customers ("name", "email", "cpf", "phone", "status") VALUES ($1, $2, $3, $4, $5)',
+        [ name, email, cpf, phone, status ]
+      );
+      
+    } catch (err: any) {
+      console.error('MODEL: ', err.message);
+      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+      // refatorar tratativa de erros
+    }
+  }
 }

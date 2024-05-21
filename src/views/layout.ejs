@@ -19,6 +19,7 @@
 
     <main>
         <!-- Conteúdo da página -->
+        <button type="button" id="btn-new-customer">Novo Cliente</button>
         <%- body %>
     </main>
 
@@ -27,4 +28,9 @@
         <%- include('footer'); %>
     </footer>
 </body>
+<script>
+    document.getElementById('btn-new-customer').addEventListener('click', function() {
+      window.location.href = '/customers/new-customer';
+    });
+  </script>
 </html>
