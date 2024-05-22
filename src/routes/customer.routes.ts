@@ -70,6 +70,19 @@ async function customerRoutes(fastify: FastifyInstance) {
       return reply.view('alerts/errorAlert.ejs', { errorMessage: err.message });
     }
   });
+
+  fastify.post<{ Params: { id: string }}>('/delete-customer/:id', async (request, reply) => {
+    try {
+      const { id } = request.params;
+
+      await controller.deleteCustomer(Number(id));
+
+      return reply.view('alerts/sucessAlert.ejs', { criado: true, alertText: 'excluido' });
+    } catch (err: any) {
+      console.error('ROUTE', err.message);
+      return reply.status(500).send({ error: err.message });
+    }
+  })
 }
 
 export default customerRoutes;

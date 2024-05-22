@@ -59,4 +59,17 @@ export default class CustomerModel implements ICustomerModel {
       throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
     }
   }
+
+  public async deleteCustomer(customerId: number): Promise<void> {
+    try {
+      const tst = await this.postgres.query(
+        'DELETE FROM customers WHERE id = $1',
+        [customerId]
+      )
+      
+    } catch (err: any) {
+      console.error('MODEL: ', err.message);
+      throw new Error(`INTERNAL SERVER ERROR: ${err.message}`);
+    }
+  }
 }

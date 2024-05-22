@@ -1,0 +1,16 @@
+#btn-delete {
+  background-color: transparent;
+  cursor: pointer;
+  color: red;
+  font-weight: 600;
+  border-color: red;
+  border-radius: 0.25rem;
+  height: 2.25rem;
+  margin: auto 0;
+  width: 5rem;
+}
+
+#btn-delete:hover {
+  background-color: red;
+  color: white;
+}

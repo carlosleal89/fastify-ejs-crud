@@ -1,3 +1,8 @@
+<form id="delete-form" action="/customers/delete-customer/<%= customer[0].id %>" method="POST" style="display: none;">
+  <input type="hidden" name="_method" value="DELETE">
+</form>
+<!-- form oculto para lidar com a função submit do botão de deletar -->
+
 <form class="container-form" action="/customers/update/<%= customer[0].id %>" method="POST">
   <label for="input-name">Nome: </label>  
   <input type="text" name="input-name" id="input-name" placeholder="Nome" value="<%= customer[0].name %>" >
@@ -17,11 +22,18 @@
   <div class="container-btn-form">
     <button type="submit" class="btn-transparent">Editar</button>
     <button type="button" id="btn-back" class="btn-transparent">Voltar</button>
+    <button type="button" id="btn-delete" >Excluir</button>
   </div>
 </form>
 
 <script>
   document.getElementById('btn-back').addEventListener('click', function() {
     window.location.href = '/customers/';
+  });
+
+  document.getElementById('btn-delete').addEventListener('click', function() {
+    if (confirm('Atenção! O cliente será excluido permanentemente! Deseja continuar?')) {
+      document.getElementById('delete-form').submit();
+    }
   });
 </script>

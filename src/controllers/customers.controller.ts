@@ -35,7 +35,7 @@ export default class CustomerController {
       await this.customerModel.updateCustomer(customerId, customerData);
     } catch (err: any) {
       console.error('CONTROLLER', err.message);
-      throw Error(err.message);
+      throw new Error(err.message);
     }
   }
 
@@ -48,4 +48,14 @@ export default class CustomerController {
       throw new Error(err.message);
     }
   }
+
+  public async deleteCustomer(customerId: number): Promise<void> {
+    try {
+      await this.customerModel.deleteCustomer(customerId);
+    } catch (err: any) {
+      console.error('CONTROLLER', err.message);
+      throw new Error(err.message);
+    }
+  }
+
 }

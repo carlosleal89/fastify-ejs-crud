@@ -8,18 +8,21 @@ async function urlEncondedParser (fastify: FastifyInstance, options: any) {
     try {
       const parsed: Record<string, string | string[] | ParsedQs | ParsedQs[] | undefined> = qs.parse(body);
       
-      const [name, email, cpf, phone]: string[] = parsed['input-name'] as string[];
-      const status: string = parsed['status-select'] as string;      
+      if (!parsed._method) {
+        
+        const [name, email, cpf, phone]: string[] = parsed['input-name'] as string[];
+        const status: string = parsed['status-select'] as string;
 
-      const consumer: ICustomer = {
-        name,
-        email,
-        cpf,
-        phone,
-        status
-      };
-
-      done(null, consumer);
+        const consumer: ICustomer = {
+          name,
+          email,
+          cpf,
+          phone,
+          status
+        };
+        return done(null, consumer);        
+        }
+        done();
     } catch (err) {
       done(err);
     }

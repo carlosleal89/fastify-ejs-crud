@@ -12,4 +12,5 @@ export interface ICustomerModel {
   getCustomerById(customerId: number): Promise<ICustomer[] | null>;
   updateCustomer(customerId: Number, customerData: ICustomer): Promise<void>;
   createCustomer(customerData: ICustomer): Promise<void>;
+  deleteCustomer(customerId: number): Promise<void>;
 }
