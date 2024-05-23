@@ -45,9 +45,11 @@ fastify.register(favicon); // plugin para o erro da requisição ao favicon
 
 fastify.register(urlEncondedParser); // plugin criado para o Fastify lidar com o tipo de dados 'application/x-www-form-urlencoded'. Formato enviado por requisições do tipo POST
 
-fastify.register(customerRoutes, {
-  prefix: '/customers'
-});
+// fastify.register(customerRoutes, {
+//   prefix: '/customers'
+// });
+
+fastify.register(customerRoutes);
 
 fastify.listen({ port: 5000, host: '0.0.0.0' }, function (err, address) {
   if (err) {
