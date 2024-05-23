@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import CustomerController from '../controllers/customers.controller';
+import CustomerController from '../controllers/customers.controller.js';
 import { PostgresDb } from '@fastify/postgres';
 import { ICustomer } from '../interfaces/customer.interface';
 

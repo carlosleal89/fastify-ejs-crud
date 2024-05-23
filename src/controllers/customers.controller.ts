@@ -1,5 +1,5 @@
 import { ICustomer, ICustomerModel } from '../interfaces/customer.interface';
-import CustomerModel from '../models/customers.model';
+import CustomerModel from '../models/customers.model.js';
 import { PostgresDb } from '@fastify/postgres';
 
 export default class CustomerController {

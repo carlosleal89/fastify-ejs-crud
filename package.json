@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc && npm run copy-files",
+    "start": "nodemon .",
+    "copy-files": "copyfiles -u 1 -E \"src/views/**/*\" build/"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
     "@types/pg": "^8.11.6",
     "@types/qs": "^6.9.15",
     "@wwa/fastify-favicon": "^2.2.4",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.0",
     "tsx": "^4.10.2",
     "typescript": "^5.4.5"

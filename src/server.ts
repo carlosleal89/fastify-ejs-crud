@@ -1,14 +1,14 @@
 import Fastify from 'fastify';
 import favicon from '@wwa/fastify-favicon';
 import fastifyPostgres from '@fastify/postgres';
-import customerRoutes from './routes/customer.routes';
+import customerRoutes from './routes/customer.routes.js';
 import fastifyView from '@fastify/view';
 import ejs from 'ejs';
 import fastifyStatic from '@fastify/static';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import urlEncondedParser from './middlewares/dataParser';
+import urlEncondedParser from './middlewares/dataParser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); //configuração necessaria, pois o __dirname não é disponivel quando se usa ES module
@@ -34,7 +34,7 @@ fastify.register(fastifyView, {
 });
 
 fastify.register(fastifyStatic, {
-  root: path.join(__dirname, 'public'),
+  root: path.join(__dirname, '../public'),
   prefix: '/public/',
 });
 
