@@ -9,6 +9,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import urlEncondedParser from './middlewares/dataParser.js';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); //configuração necessaria, pois o __dirname não é disponivel quando se usa ES module
@@ -22,7 +25,7 @@ const fastify = Fastify({
 });
 
 fastify.register(fastifyPostgres, {
-  connectionString: 'postgres://postgres:123456@localhost/customersmanagement'
+  connectionString: process.env.DB_URL
 });
 
 fastify.register(fastifyView, {
