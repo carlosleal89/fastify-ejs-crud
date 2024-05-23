@@ -26,12 +26,12 @@ body {
   height: 2.5rem;
   color: white;
   margin: auto 0;
-  background-color: green;
+  background-color: #31572c;
   border-radius: 0.25rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 #btn-new-customer:hover {
-  background-color: rgb(73, 206, 73);
+  background-color: #4f772d;
 }

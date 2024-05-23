@@ -1,9 +1,9 @@
 .btn-transparent {
   background-color: transparent;
   cursor: pointer;
-  color: green;
+  color: #31572c;
   font-weight: 600;
-  border-color: green;
+  border-color: #31572c;
   border-radius: 0.25rem;
   height: 2.25rem;
   margin: auto 0;
@@ -11,7 +11,7 @@
 }
 
 .btn-transparent:hover {
-  background-color: green;
+  background-color: #4f772d;
   color: white;
 }
 

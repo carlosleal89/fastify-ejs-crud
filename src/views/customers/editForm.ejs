@@ -26,14 +26,27 @@
   </div>
 </form>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
 <script>
   document.getElementById('btn-back').addEventListener('click', function() {
     window.location.href = '/customers/';
   });
 
   document.getElementById('btn-delete').addEventListener('click', function() {
-    if (confirm('Atenção! O cliente será excluido permanentemente! Deseja continuar?')) {
-      document.getElementById('delete-form').submit();
-    }
+    console.log('TTESTESTE');
+    Swal.fire({
+      title: "Deseja continuar?",
+      text: "O cliente será excluído permanentemente!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#31572c",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sim!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById('delete-form').submit();
+      }
+    });
   });
 </script>
